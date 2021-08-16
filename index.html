@@ -19,8 +19,13 @@
 -->
     <h4 id="test">안녕하세요</h4>
 
+    <p class="greeting">안녕하세요</p>
+    <p class="greeting">안녕하세요</p>
+    <p class="greeting">안녕하세요</p>
 
-
+    <button class="btn">버튼btn</button>
+    <button class="btn">버튼btn</button>
+    <button class="btn">버튼btn</button>
 
 
     <script
@@ -39,7 +44,22 @@
 //            document.getElementById('alert').style.display = 'block';
 //        }
 //        document.getElementById('test').innerHTML = '???';
-        $('#test').attr('class','yellow-bg');
+//        $('#test').addClass('yellow-bg');
+
+
+
+                /* js, jq 차이점 js = 요소를 한개씩만 변경, jquery = 요소 한번에 변경가능 */
+        document.getElementsByClassName('greeting')[0].innerHTML = '안녕';
+//        $('.greeting').html('안녕');
+
+        //document.getElementsByClassName('btn')[0].addEventListener(이벤트내용);
+//        $('.btn').on('click', function(){
+//            //이벤트내용
+//        })
+
+        $('.btn').on('click',function(){
+            $('.greeting').hide();
+        })
     </script>
 
 
