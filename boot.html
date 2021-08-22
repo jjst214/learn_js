@@ -18,11 +18,25 @@
   </head>
   <body>
 
-      <div class="black-background">
-        <div class="white-background">
-          <p>로그인하세요</p>
+        <div class="black-background">
+            <div class="white-background">
+                <p>로그인하세요</p>
+            </div>
         </div>
-      </div>
+
+        <div class="nav-menu">
+            <h4>Shirts Studio</h4>
+            <a id="nav-sub-button">Products</a>
+        </div>
+
+        <ul class="list-group nav-sub">
+          <li class="list-group-item">Outer</li>
+          <li class="list-group-item">Innerwear</li>
+          <li class="list-group-item">Shirts</li>
+          <li class="list-group-item">Pants</li>
+        </ul>
+
+
 
     <div class="jumbotron main-backgruond">
   <h1 class="display-4">Shirts Studio</h1>
@@ -33,9 +47,14 @@
 </div>
 
 <script>
-    $('#login').on('click',function(){
-        $('.black-background').show();
-    })
+    $('#login').on('click', function(){
+        $('.black-background').fadeIn(); //fadeIn() = 서서히 나타나는 효과 <==> fadeOut() /  slideDown() 내려오면서 나타나는 효과 <> slideUp()
+    });
+
+
+    $('#nav-sub-button').click(function(){
+        $('.nav-sub').slideToggle();        // toggle = 메뉴 열고 닫을때 쓰는 토글방식버튼(slideUp,Down)
+    });
 </script>
 
 
