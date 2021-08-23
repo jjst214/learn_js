@@ -21,6 +21,7 @@
         <div class="black-background">
             <div class="white-background">
                 <p>로그인하세요</p>
+                <button class="btn btn-danger" id="close">닫기</button>
             </div>
         </div>
 
@@ -46,15 +47,34 @@
   <a id="login" class="btn btn-primary btn-lg" role="button">Log In</a>
 </div>
 
+
+      <input id="test-input">
 <script>
+
+    if (3 < 1){     // 조건부등호 비교에서 '=='는 정수형 1과 문자열 1을 참으로 반환하고 '==='는 데이터 타입까지 비교하기 때문에 거짓으로 반환 됨
+        console.log('안녕')
+    } else{
+        console.log('반가워')
+    }
+
+    // login modal
     $('#login').on('click', function(){
+        if($('#test-input').val() == '안녕'){
         $('.black-background').fadeIn(); //fadeIn() = 서서히 나타나는 효과 <==> fadeOut() /  slideDown() 내려오면서 나타나는 효과 <> slideUp()
+        }
+    });
+    // close modal
+    $('#close').on('click', function(){
+        $('.black-background').fadeOut();
     });
 
-
+    // nav-bar
     $('#nav-sub-button').click(function(){
         $('.nav-sub').slideToggle();        // toggle = 메뉴 열고 닫을때 쓰는 토글방식버튼(slideUp,Down)
     });
+
+
+
 </script>
 
 
