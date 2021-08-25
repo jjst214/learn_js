@@ -45,3 +45,15 @@
     padding: 15px;
     align-items: center;
 }
+
+.nav-sub {
+    display: none;
+}
+
+#email-alert {
+    display: none;
+}
+
+#psw-alert {
+    display: none;
+}

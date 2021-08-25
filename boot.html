@@ -21,9 +21,22 @@
         <div class="black-background">
             <div class="white-background">
                 <p>로그인하세요</p>
-                <button class="btn btn-danger" id="close">닫기</button>
+                <form action="login.php">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" id="email">
+                      <p id="email-alert">이메일을 입력해주세요</p>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" id="psw">
+                      <p id="psw-alert">패스워드를 입력해주세요</p>
+                  </div>
+                  <button type="submit" class="btn btn-primary">전송</button>
+                  <button class="btn btn-danger" id="close">닫기</button>
+                </form>
             </div>
         </div>
+
+
 
         <div class="nav-menu">
             <h4>Shirts Studio</h4>
@@ -39,29 +52,42 @@
 
 
 
-    <div class="jumbotron main-backgruond">
-  <h1 class="display-4">Shirts Studio</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a id="login" class="btn btn-primary btn-lg" role="button">Log In</a>
-</div>
+      <div class="jumbotron main-backgruond">
+        <h1 class="display-4">Shirts Studio</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a id="login" class="btn btn-primary btn-lg" role="button">Log In</a>
+      </div>
 
 
-      <input id="test-input">
 <script>
 
-    if (3 < 1){     // 조건부등호 비교에서 '=='는 정수형 1과 문자열 1을 참으로 반환하고 '==='는 데이터 타입까지 비교하기 때문에 거짓으로 반환 됨
+    if (1 == 3){     // 조건부등호 비교에서 '=='는 정수형 1과 문자열 1을 참으로 반환하고 '==='는 데이터 타입까지 비교하기 때문에 거짓으로 반환 됨
         console.log('안녕')
-    } else{
+    } else if(1 == 1){
+        console.log('안녕2')
+    } else {
         console.log('반가워')
-    }
+    }// && = and, || = or
+
+
+    $('form').on('submit',function(e){
+        if($('#email').val() == ''){
+            e.preventDefault();  //preventDefault() = 폼의 전송을 막음.
+            $('#email-alert').show();
+        }
+
+        if($('#psw').val() == ''){
+            e.preventDefault();
+            $('#psw-alert').show();
+        }
+    })
+
 
     // login modal
     $('#login').on('click', function(){
-        if($('#test-input').val() == '안녕'){
         $('.black-background').fadeIn(); //fadeIn() = 서서히 나타나는 효과 <==> fadeOut() /  slideDown() 내려오면서 나타나는 효과 <> slideUp()
-        }
     });
     // close modal
     $('#close').on('click', function(){
